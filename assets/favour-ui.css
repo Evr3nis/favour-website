@@ -101,3 +101,22 @@ body.fx-no-motion .marquee span{animation:none!important}
 @media(max-width:850px){.about-id .about-tagline{max-width:none}.about-file-details{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:500px){.about-file-details{grid-template-columns:1fr}.about-links a{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.about-links a{transition:none}}
+
+/* FAVOUR MEDIA announcement card on the main homepage. */
+.fm-launch{display:grid;grid-template-columns:minmax(230px,.82fr) minmax(0,1.18fr);gap:0;border:2px solid #729299;background:#1b303a;box-shadow:7px 8px 0 #050b10;min-width:0}
+.fm-screen{background:#0b2028;border-right:2px solid #729299;min-height:290px;display:flex;flex-direction:column}
+.fm-screenbar{background:var(--blue);color:#14232a;border-bottom:2px solid #14232a;padding:10px 13px;font:11px 'DM Mono',monospace;display:flex;justify-content:space-between;gap:12px}
+.fm-screenart{display:flex;flex:1;align-items:center;justify-content:center;flex-direction:column;gap:16px;text-align:center;padding:22px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 24%,#376374,#0b2028 62%)}
+.fm-screenart:before{content:"";position:absolute;inset:0;opacity:.22;background:repeating-linear-gradient(0deg,transparent 0 3px,#0007 4px 5px);pointer-events:none}
+.fm-bigplay{display:grid;place-items:center;width:90px;height:90px;border-radius:50%;border:3px solid var(--mint);color:var(--mint);font-size:65px;line-height:1;position:relative}
+.fm-screenlabel{font:11px/1.5 'DM Mono',monospace;color:#d6e6e2;position:relative}
+.fm-copy{padding:clamp(20px,4vw,38px);min-width:0}
+.fm-kicker{font:11px 'DM Mono',monospace;color:var(--mint)}
+.fm-copy h3{font-size:clamp(29px,4.4vw,53px);letter-spacing:-.075em;line-height:1.08;margin:14px 0}
+.fm-copy p{font-size:15px;line-height:1.7;color:#cbd9d5}
+.fm-copy .fm-small{font:11px/1.6 'DM Mono',monospace;color:#9fb8b5}
+.fm-buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.fm-buttons a{text-decoration:none;background:var(--mint);color:#14232a;padding:12px 14px;font:12px 'DM Mono',monospace;border:1px solid var(--mint)}
+.fm-buttons a:last-child{background:transparent;color:var(--mint)}
+.fm-buttons a:hover{background:var(--pink);border-color:var(--pink);color:#14232a}
+@media(max-width:740px){.fm-launch{grid-template-columns:1fr}.fm-screen{min-height:205px;border-right:0;border-bottom:2px solid #729299}.fm-screenart{min-height:180px}.fm-buttons a{flex:1 1 auto;text-align:center}}
