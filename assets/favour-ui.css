@@ -52,3 +52,25 @@ body.fx-reader-mode .file{box-shadow:none}
 @media(min-width:900px){.fx-controls{margin-top:-5px}}
 @media(max-width:620px){.fx-controls{align-items:flex-start}.fx-actions{width:100%}.fx-actions .fx-control{flex:1 1 auto;font-size:10px;padding:9px 7px}.fx-modal{padding-top:70px}.fx-modalbody{padding:16px}.fx-results a{font-size:11px}.fx-detail .fx-close{float:none;display:block;margin-left:auto}.fx-topic[aria-expanded="true"]::after{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.fx-light{animation:none!important}.fx-control{transition:none!important;transform:none!important}}
+
+/* Interactive directory and quiet retro motion. */
+.fx-topic .fx-topic-title{display:block;font-size:26px;letter-spacing:-.05em;line-height:1.2;font-weight:700;margin:40px 0 12px}
+.fx-topic .fx-topic-summary{display:block;color:#c1ccca;line-height:1.5;font-size:14px;margin:0;font-weight:400}
+.fx-topic .index{display:block}
+.fx-topic{appearance:none;-webkit-appearance:none;min-width:0}
+.fx-topic:hover{border-color:var(--mint)}
+.fx-topic[aria-expanded="true"] .fx-topic-summary{color:#e7e9e0}
+@media(max-width:560px){.fx-topic .fx-topic-title{margin-top:25px}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ body:not(.fx-no-motion) .hero .window{transition:transform .25s ease,box-shadow .25s ease}
+ body:not(.fx-no-motion) .hero .window:hover{transform:translateY(-3px)}
+ body:not(.fx-no-motion) .hero .art{transition:transform .35s ease}
+ body:not(.fx-no-motion) .hero .window:hover .art{transform:rotate(0deg) scale(1.035)}
+ body:not(.fx-no-motion) .journal .article{transition:transform .23s ease,box-shadow .23s ease}
+ body:not(.fx-no-motion) .journal .article:hover{transform:translateY(-3px);box-shadow:6px 6px 0 #080f13}
+}
+.marquee:hover span{animation-play-state:paused}
+html:has(body.fx-no-motion){scroll-behavior:auto!important}
+body.fx-no-motion .fx-control:hover{transform:none!important}
+body.fx-no-motion .marquee span{animation:none!important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
