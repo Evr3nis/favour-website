@@ -261,6 +261,9 @@
   });
   window.addEventListener("pagehide",()=>{if(localUrl)URL.revokeObjectURL(localUrl)});
   const init=()=>{
+    const requestedType=new URLSearchParams(window.location.search).get("type");
+    if(requestedType==="video"||requestedType==="audio")filter=requestedType;
+    document.querySelectorAll("[data-filter]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.filter===filter)));
     updateCount();renderCategories();renderQueue();renderLibrary();clearPlayer();
     if(window.location.hash.startsWith("#watch-")){
       const id=decodeURIComponent(window.location.hash.slice(7));
