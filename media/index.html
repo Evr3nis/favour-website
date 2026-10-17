@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101d25"><meta name="description" content="FAVOUR Media — personal video recordings, audio reflections, and media essays.">
+<title>FAVOUR MEDIA / VIDEO + AUDIO ARCHIVE</title>
+<link rel="stylesheet" href="media.css"></head>
+<body>
+<a class="skip mono" href="#library">Skip to the media library</a>
+<div class="topline"><div class="wrap"><span>● FAVOUR.EXE / MEDIA SYSTEM / ONLINE</span><span>INDEPENDENT VOICE · SMALL CORNER OF THE INTERNET</span></div></div>
+<header class="wrap brandbar">
+  <a href="../index.html" class="brand" aria-label="Favour homepage">FAVOUR<b>✳</b><small>MEDIA</small></a>
+  <nav aria-label="Main navigation"><a href="../index.html">HOME.EXE</a><a href="../index.html#journal">JOURNAL/</a><a href="#library">VIDEOS + AUDIO</a><a href="#preview">LOCAL PREVIEW</a></nav>
+</header>
+<main class="wrap">
+  <section class="intro" aria-labelledby="page-heading">
+    <div><div class="eyebrow">FAVOUR MEDIA / AN AUDIOVISUAL NOTEBOOK</div>
+      <h1>Ideas worth<br><span>recording.</span></h1>
+      <p>A place for my videos, spoken reflections, media commentary, and creative experiments. Less a traditional channel, more a growing archive of what I find interesting.</p>
+    </div>
+    <div class="intro-tag"><div class="head">CHANNEL_PROFILE.TXT <span aria-hidden="true">▣</span></div>
+      <strong>A mind full of open tabs.<br>Now with a microphone.</strong>
+      <p>PSYCHOLOGY · PHILOSOPHY · MEDIA · EVERYDAY OBSERVATIONS</p>
+      <span class="pill" id="channel-count">0 PUBLISHED RECORDINGS</span>
+    </div>
+  </section>
+  <p class="disclosure">NOTICE / This archive currently starts empty. Any topic cards labeled “planned” are ideas, not uploaded videos. Local previews stay on your device and are not published to GitHub.</p>
+  <section class="player-shell" aria-labelledby="watch-label">
+    <div class="player-window">
+      <div class="bar"><span id="player-file">NOW_PLAYING / NO_FILE_SELECTED</span><span class="squares" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="screen" id="player-screen">
+        <div class="empty-hero" id="empty-hero"><div class="symbol" aria-hidden="true">▷</div><h2>Nothing playing yet.</h2><p>Choose a published recording below, or preview a video or audio file from your device.</p></div>
+        <video id="video-player" class="media-hidden" controls playsinline preload="metadata" aria-label="Video player"></video>
+        <div id="audio-art" class="sound-screen media-hidden" aria-hidden="true"><div class="sound-disc"></div><h3 id="audio-title"></h3></div>
+      </div>
+      <div class="audio-controller media-hidden" id="audio-controls"><audio id="audio-player" controls preload="metadata" aria-label="Audio player"></audio></div>
+      <div class="details">
+        <div class="meta" id="player-meta">FAVOUR MEDIA / YOUR WATCH &amp; LISTEN SPACE</div>
+        <h2 id="player-title">Welcome to FAVOUR Media.</h2>
+        <p id="player-description">Your recordings will appear here when you publish them. You can test an existing recording locally using the preview controls farther down the page.</p>
+        <div class="player-actions"><button class="small-btn media-hidden" type="button" id="copy-link">COPY EPISODE LINK ↗</button><a class="small-btn secondary" href="#library">BROWSE RECORDINGS ↓</a></div>
+        <details class="transcript media-hidden" id="transcript-box"><summary>READ TRANSCRIPT.TXT</summary><p id="transcript-content"></p></details>
+        <p id="player-error" class="media-hidden" role="alert"></p>
+      </div>
+    </div>
+    <aside class="queue" aria-labelledby="watch-label">
+      <div class="caption">AUTOPLAY: OFF // NOTHING STARTS WITHOUT YOU</div>
+      <h3 id="watch-label">Watch &amp; listen next.</h3>
+      <p class="caption">YOUR PERSONAL RECORDING QUEUE</p>
+      <div class="queue-items" id="queue-items"><p class="queue-empty">Your queue will appear after you publish a video or audio recording.</p></div>
+    </aside>
+  </section>
+  <section id="library" aria-labelledby="library-heading">
+    <div class="library-head"><h2 id="library-heading">01 / media_library</h2><span id="result-count">[ 00 FILES ]</span></div>
+    <div class="filterbar">
+      <div class="tabs" role="group" aria-label="Recording type">
+        <button class="tab" type="button" data-filter="all" aria-pressed="true">ALL</button>
+        <button class="tab" type="button" data-filter="video" aria-pressed="false">VIDEOS</button>
+        <button class="tab" type="button" data-filter="audio" aria-pressed="false">AUDIO</button>
+      </div>
+      <label class="search"><span class="media-hidden">Search recordings</span><input type="search" id="library-search" placeholder="SEARCH RECORDINGS..." aria-label="Search recordings"></label>
+      <select class="select" id="category-filter" aria-label="Filter by category"><option value="all">ALL TOPICS</option></select>
+      <select class="select" id="sort-order" aria-label="Sort recordings"><option value="newest">NEWEST FIRST</option><option value="oldest">OLDEST FIRST</option><option value="title">TITLE A–Z</option></select>
+    </div>
+    <p class="countline" id="list-status" role="status" aria-live="polite">No recordings published yet.</p>
+    <div class="card-grid" id="media-grid"><div class="no-result"><h3>Your recording shelf is ready.</h3><p>Publish your first recording to fill this space. Until then, browse the ideas below or preview a file privately from your device.</p></div></div>
+  </section>
+  <section class="ideas" aria-labelledby="idea-heading">
+    <div class="eyebrow">IDEAS ONLY / NOTHING RECORDED OR PUBLISHED</div>
+    <h2 id="idea-heading">02 / possible_series</h2>
+    <div class="idea-grid">
+      <article class="idea"><span>PLANNED FORMAT / VIDEO</span><h3>FAVOUR / On the Mind</h3><p>Personal explanations and thoughtful research questions about psychology, social behavior, and everyday experiences.</p></article>
+      <article class="idea"><span>PLANNED FORMAT / VIDEO ESSAY</span><h3>The Animation Notebook</h3><p>Cartoon and character analysis—from satire in <em>The Boondocks</em> to the personalities of Gumball and Squidward.</p></article>
+      <article class="idea"><span>PLANNED FORMAT / AUDIO</span><h3>Late Notes &amp; Reflections</h3><p>Voice recordings on philosophy, nonfiction books, new ideas, and questions worth thinking about.</p></article>
+    </div>
+  </section>
+  <section class="preview" id="preview" aria-labelledby="preview-heading">
+    <div class="preview-head">LOCAL_PREVIEW.EXE // YOUR DEVICE ONLY</div>
+    <div class="preview-body">
+      <h2 id="preview-heading">03 / test a recording</h2>
+      <p>Choose a video or audio file from your iPhone, tablet, or computer to play it in this page. This is a <strong>local preview only</strong>: selecting a file does not upload, save, transmit, or publish it. Refreshing the page removes the preview.</p>
+      <div class="upload-row">
+        <label class="file-picker">CHOOSE VIDEO OR AUDIO <input id="preview-file" type="file" accept="video/*,audio/*,.mp4,.webm,.mov,.mp3,.m4a,.wav,.ogg"></label>
+        <button id="clear-preview" class="small-btn secondary" type="button" disabled>REMOVE PREVIEW</button>
+      </div>
+      <p class="preview-status" id="preview-status" role="status">NO FILE SELECTED. LOCAL PREVIEW IS OFF.</p>
+      <p>When you're ready to publish an actual recording, follow the <a href="https://github.com/Evr3nis/favour-website/blob/main/media/README.md">publishing instructions</a> to add its file and title to your GitHub repository. Avoid uploading private information, especially because your website is public.</p>
+    </div>
+  </section>
+</main>
+<footer class="wrap footer"><span>© FAVOUR / MEDIA ARCHIVE / IDEAS IN PROGRESS</span><a href="../index.html">← RETURN TO FAVOUR.EXE</a></footer>
+<script src="catalog.js"></script><script src="media.js" defer></script>
+</body></html>
