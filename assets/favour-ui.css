@@ -74,3 +74,30 @@ html:has(body.fx-no-motion){scroll-behavior:auto!important}
 body.fx-no-motion .fx-control:hover{transform:none!important}
 body.fx-no-motion .marquee span{animation:none!important}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* Personalized FAVOUR.TXT profile — homepage only. */
+.about-id{display:flex;flex-direction:column;gap:0;min-width:0}
+.about-id .big{line-height:1;margin:24px 0 14px}
+.about-id .about-tagline{font-size:clamp(20px,2.5vw,30px);line-height:1.13;letter-spacing:-.06em;font-weight:700;max-width:260px;margin:0 0 22px}
+.about-id .about-roles{font:12px/1.75 'DM Mono',monospace;max-width:290px}
+.about-file-details{border-top:2px solid var(--ink);padding-top:18px;margin-top:27px;display:grid;gap:14px}
+.about-file-row{display:grid;gap:5px}
+.about-file-row .mono{font-size:10px;letter-spacing:.07em;opacity:.72}
+.about-file-row strong{font-size:14px;font-weight:600;line-height:1.45}
+.about-copy{min-width:0;padding:clamp(22px,3vw,34px)}
+.about-copy .about-kicker{font:11px 'DM Mono',monospace;letter-spacing:.07em;color:var(--mint);margin-bottom:14px}
+.about-copy h3{font-size:clamp(26px,3vw,38px);line-height:1.14;letter-spacing:-.05em;margin:0 0 22px;max-width:650px}
+.about-copy p{color:#d6e1dd;font-size:15px;line-height:1.8;margin:0 0 17px;max-width:700px}
+.about-copy strong{color:#f3f0e8}
+.about-interests{margin:22px 0 24px;padding-top:20px;border-top:1px dashed #718487}
+.about-interests .mono{font-size:11px;color:var(--mint)}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.about-chip{border:1px solid #708588;background:#20333b;padding:8px 10px;color:#e0e9e4;font:11px 'DM Mono',monospace}
+.about-links{display:flex;gap:10px;flex-wrap:wrap}
+.about-links a{background:var(--mint);color:var(--ink);font:12px 'DM Mono',monospace;text-decoration:none;display:inline-block;padding:13px 14px;border:1px solid var(--mint);transition:background .16s}
+.about-links a:last-child{background:transparent;color:var(--mint)}
+.about-links a:hover{background:var(--pink);color:var(--ink);border-color:var(--pink)}
+.about-links a:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+@media(max-width:850px){.about-id .about-tagline{max-width:none}.about-file-details{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.about-file-details{grid-template-columns:1fr}.about-links a{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.about-links a{transition:none}}
