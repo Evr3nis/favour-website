@@ -125,7 +125,7 @@
     else if(cmd==="notes"){line("Opening NOTES.TXT ...","output");openApp("notes")}
     else if(cmd==="files"){line("Opening FILES/ ...","output");openApp("files")}
     else if(cmd==="time"||cmd==="date"){line(new Date().toLocaleString(),"output")}
-    else if(cmd==="status"){line("FAVOUR OS ONLINE. LOCAL STORAGE: "+(typeof localStorage==="undefined"?"UNAVAILABLE":"DEVICE ONLY")+". No data sent to a server by these apps.","output")}
+    else if(cmd==="status"){line("FAVOUR OS ONLINE. LOCAL STORAGE: "+(safeGet("favour-palette")===null?"DEVICE ONLY (WHEN ALLOWED)":"DEVICE ONLY")+". No data sent to a server by these apps.","output")}
     else if(cmd==="open 1"){window.location.href="journal/quiet-distance.html"}
     else if(cmd==="open 2"){window.location.href="journal/fictional-characters.html"}
     else if(cmd==="theme"){line("CURRENT PALETTE: "+(document.body.dataset.palette||"mint")+". TRY THEME VIOLET.","output")}
@@ -139,7 +139,7 @@
     }
     else{line("UNKNOWN COMMAND. TYPE HELP FOR THE FILE LIST.","output")}
   }
-  if(form)form.addEventListener("submit",e=>{e.preventDefault();exec(input.value);input.value="";input.focus()});
+  if(form)form.addEventListener("submit",e=>{e.preventDefault();exec(input.value);input.value="";if(active==="terminal")input.focus()});
   root.querySelectorAll("[data-os-cmd]").forEach(b=>b.addEventListener("click",()=>exec(b.dataset.osCmd)));
   line("FAVOUR OS v2.0 / A MIND FULL OF OPEN TABS.","output");
   line("Type HELP for commands, or open a program using the desktop icons.","output");
