@@ -1,0 +1,95 @@
+
+/* FAVOUR OS 2.0 — an interactive retro desktop. */
+.os-section{margin:24px 0 72px;scroll-margin-top:20px}
+.os-subhead{display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px;align-items:baseline;margin-bottom:17px}
+.os-subhead h2{font-size:clamp(27px,4vw,45px);margin:0;letter-spacing:-.065em}
+.os-subhead .os-subline{font:11px 'DM Mono',monospace;color:var(--mint)}
+.os-desktop{--desktop-accent:var(--mint);position:relative;height:596px;isolation:isolate;border:3px solid #0a131a;box-shadow:9px 10px 0 #050a0d;overflow:hidden;background-color:#294253;background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px),radial-gradient(ellipse at 72% 15%,#436270 0%,transparent 49%);background-size:24px 24px,24px 24px,auto}
+.os-desktop::before{content:"FAVOUR ✳";position:absolute;right:24px;bottom:68px;font-size:clamp(60px,10vw,140px);line-height:1;letter-spacing:-.11em;font-weight:700;color:#ffffff0c;pointer-events:none}
+.os-desktop::after{content:"+";position:absolute;right:6%;top:11%;font:90px 'DM Mono',monospace;color:#c5f06c2f;pointer-events:none;animation:os-bob 5s ease-in-out infinite}
+.os-menubar{height:37px;padding:0 14px;background:var(--mint);color:var(--ink);border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center;gap:10px;font:11px 'DM Mono',monospace;position:relative;z-index:20}
+.os-menubar .os-menuright{font-size:10px;opacity:.8}
+.os-launcher{position:absolute;left:15px;top:57px;display:grid;gap:14px;z-index:9}
+.os-launch{width:89px;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;border:1px solid transparent;background:transparent;color:#edf1ea;text-align:center;padding:7px 5px;font:10px/1.4 'DM Mono',monospace;transition:background .2s,transform .2s}
+.os-launch:hover,.os-launch:focus-visible,.os-launch[aria-pressed="true"]{background:#0b1a2999;border-color:#9bdad1}
+.os-launch-icon{width:43px;height:41px;display:grid;place-items:center;background:#f1eee2;color:#15272c;border:2px solid #14232a;box-shadow:4px 4px 0 #0d1b24;font-size:24px}
+.os-launch[data-open="notes"] .os-launch-icon{background:#ffb8d0}
+.os-launch[data-open="files"] .os-launch-icon{background:#d8f59a}
+.os-window{position:absolute;display:flex;flex-direction:column;min-width:270px;min-height:210px;background:#eeeadd;color:#14232a;border:2px solid #081116;box-shadow:9px 10px 0 #0b1416d0;z-index:2}
+.os-window[hidden]{display:none!important}
+.os-window[data-window="terminal"]{left:19%;top:12%;width:56%;height:377px;z-index:5}
+.os-window[data-window="notes"]{left:59%;top:26%;width:36%;height:332px;z-index:4}
+.os-window[data-window="files"]{left:10%;top:47%;width:37%;height:245px;z-index:3}
+.os-window.os-active{box-shadow:10px 11px 0 #070f11;outline:2px solid var(--mint);outline-offset:0}
+.os-titlebar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--blue);border-bottom:2px solid #14232a;padding:8px 11px;font:11px 'DM Mono',monospace;user-select:none;touch-action:none;cursor:grab;min-height:40px}
+.os-titlebar:active{cursor:grabbing}
+.os-window[data-window="notes"] .os-titlebar{background:var(--pink)}
+.os-window[data-window="files"] .os-titlebar{background:var(--mint)}
+.os-window .os-titlebar span{overflow-wrap:anywhere}
+.os-titlebar button{cursor:pointer;border:2px solid #14232a;background:#eeeadd;color:#14232a;font:15px 'DM Mono',monospace;width:26px;height:25px;flex:none;line-height:1;padding:0}
+.os-titlebar button:hover{background:#14232a;color:#fff}
+.os-content{min-height:0;overflow-y:auto;flex:1;padding:14px}
+.os-terminal{background:#0d1b23;color:#c5f06c;display:flex;flex-direction:column;font:12px/1.6 'DM Mono',monospace}
+.os-log{min-height:0;flex:1;overflow-y:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+.os-log p{margin:0 0 7px}
+.os-log .os-output{color:#d6e6df}
+.os-log .os-command{color:var(--mint)}
+.os-terminal-form{display:flex;gap:9px;border-top:1px solid #496366;padding-top:11px;margin-top:12px;align-items:center}
+.os-terminal-form label{flex:none}
+.os-terminal-input{min-width:0;flex:1;outline-offset:3px;background:#162b32;color:#eff1e7;border:1px solid #627c7e;padding:9px 8px;font:12px 'DM Mono',monospace}
+.os-terminal-form button,.os-notes-action{cursor:pointer;background:var(--mint);color:#14232a;border:1px solid #14232a;padding:9px 12px;font:11px 'DM Mono',monospace}
+.os-terminal-form button:hover,.os-notes-action:hover{background:var(--pink)}
+.os-prompt-commands{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.os-prompt-commands button{cursor:pointer;border:1px solid #4b696b;background:#233943;color:#d6e7df;font:10px 'DM Mono',monospace;padding:5px 7px}
+.os-prompt-commands button:hover{background:var(--mint);color:var(--ink)}
+.os-note-label{font:11px 'DM Mono',monospace;font-weight:500}
+.os-note-input{resize:vertical;display:block;width:100%;min-height:112px;max-height:270px;padding:11px;margin:9px 0;border:1.5px solid #283b41;background:#fffdf3;color:#152b30;font:14px/1.55 'Space Grotesk',sans-serif}
+.os-note-footer{font:10px/1.6 'DM Mono',monospace;color:#445d61;margin:6px 0}
+.os-note-buttons{display:flex;gap:9px;flex-wrap:wrap}
+.os-notes-action.os-clear{background:transparent}
+.os-filelist{display:grid;gap:8px}
+.os-filelist a{display:flex;align-items:center;gap:8px;padding:8px;background:#fff8e5;color:#14232a;border:1px solid #adada1;text-decoration:none;font:11px/1.5 'DM Mono',monospace}
+.os-filelist a:hover{background:var(--mint);border-color:var(--ink)}
+.os-filehint{font:10px 'DM Mono',monospace;color:#4c6061;margin:10px 0 0}
+.os-taskbar{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:10px;padding:8px 13px;background:#101d26;border-top:2px solid #081218;min-height:43px;z-index:15;font:10px 'DM Mono',monospace;color:#c2d1ce}
+.os-taskbar b{color:var(--mint)}
+.os-taskbar .os-start{padding:4px 9px;background:var(--mint);color:var(--ink);border:1px solid #101d26}
+.os-taskbar .os-taskspacer{flex:1}
+.os-taskbar a{color:var(--mint);text-decoration:none}
+.os-help{font:11px/1.65 'DM Mono',monospace;color:#b9cfca;margin-top:15px}
+.os-hidden{display:none!important}
+.os-window [data-os-live]{font:11px 'DM Mono',monospace;color:#326358;margin-top:6px;min-height:18px}
+.os-bits{position:absolute;right:7%;top:15%;width:43px;height:43px;border:7px solid #ffb8d070;transform:rotate(12deg);pointer-events:none;animation:os-bob 5.2s ease-in-out infinite}
+@keyframes os-bob{50%{transform:translateY(-9px) rotate(-8deg)}}
+@media(min-width:820px){.os-window .os-titlebar{cursor:grab}}
+@media(max-width:819px){
+ .os-desktop{height:585px}
+ .os-menuright{display:none}
+ .os-launcher{position:relative;left:auto;top:auto;display:flex;gap:7px;padding:9px;z-index:5;background:#1b313de8;justify-content:space-evenly}
+ .os-launch{width:auto;flex:1;max-width:120px;font-size:9px}
+ .os-launch-icon{width:34px;height:32px;font-size:20px;box-shadow:2px 2px 0 #0d1b24}
+ .os-window{left:10px!important;right:10px!important;top:142px!important;width:auto!important;height:395px!important;max-width:none!important;min-width:0}
+ .os-window:not(.os-active){display:none}
+ .os-titlebar{cursor:default;touch-action:auto}
+ .os-bits{display:none}
+ .os-desktop::after{display:none}
+ .os-terminal{font-size:11px}
+}
+@media(max-width:460px){
+ .os-desktop{height:620px}
+ .os-window{top:132px!important;height:445px!important}
+ .os-menubar{font-size:9px}
+ .os-content{padding:11px}
+ .os-terminal-form{gap:6px}
+ .os-terminal-form button{padding:9px 7px}
+ .os-filelist a{font-size:10px}
+ .os-taskbar{font-size:9px}
+ .os-section{margin-bottom:58px}
+}
+body.fx-no-motion .os-desktop::after,body.fx-no-motion .os-bits{animation:none!important}
+@media(prefers-reduced-motion:reduce){.os-desktop::after,.os-bits{animation:none!important}}
+/* Reading ergonomics for the two journal essays. */
+.story p{font-size:clamp(15px,calc(17px * var(--os-reading-scale,1)),24px)}
+.story .lead{font-size:clamp(19px,calc(21px * var(--os-reading-scale,1)),28px)}
+.toc a.os-toc-active{font-weight:700;color:#14232a;text-decoration:underline;text-decoration-color:#b95772;text-underline-offset:4px}
+body.fx-reader-mode .toc a.os-toc-active{color:inherit}
