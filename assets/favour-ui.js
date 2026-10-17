@@ -50,6 +50,7 @@
     ["About Favour",pageUrl("about"),"ABOUT"],
     ["Interests / obsessions",pageUrl("curiosities"),"INTERESTS"],
     ["Journal directory",pageUrl("journal"),"JOURNAL"],
+    ["FAVOUR Media · video and audio channel",onJournal?"../media/":"media/","MEDIA"],
     ["Open notebook",pageUrl("notebook"),"NOTEBOOK"],
     ["Essay 001 · The quiet distance between people",onJournal?"quiet-distance.html":"journal/quiet-distance.html","PSYCHOLOGY"],
     ["Essay 002 · Why fictional characters make us think",onJournal?"fictional-characters.html":"journal/fictional-characters.html","MEDIA"]
